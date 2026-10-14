@@ -7,7 +7,6 @@ from app.config import settings
 from app.database import engine
 from app.models.user import User
 from app.routers import auth, hod, student
-from app.routers import student
 
 
 app = FastAPI(
@@ -30,7 +29,6 @@ app.add_middleware(
 
 
 app.include_router(auth.router)
-app.include_router(student.router)
 app.include_router(hod.router)
 app.include_router(student.router, prefix="/api/v1")
 
